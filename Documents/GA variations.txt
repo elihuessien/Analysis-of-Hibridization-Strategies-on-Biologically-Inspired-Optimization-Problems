@@ -1,0 +1,16 @@
+GA breeding variations
+
+---Selecting pool
+1) Stochastic Sampling with replacement - like a roulette wheel where each individual is represented by a space that coressponds to it's fitness. By repeatedly spinning the wheel, individulas are chosen to fill the intermediate breeding population.
+
+2) Remainder Stochastic Sampling - again Roulette wheel but this time, evenly spaced pointers.
+
+
+
+
+---breeding
+radomly chose a mutation point and the two individuals swap genes occuring after that point, producing the next two individuals.
+
+
+--mutation
+each gene in the child has a random probability of mutation/swap (unsually less that 1%).

@@ -1,0 +1,14 @@
+Dissertation Plan
+
+
+- 6 algorithms (3 base, 3 hybrid)
+
+- Hybrid mixed based on 3 of the 4 styles shown in the     hybridization strategies paper(HSP) to demonstrate.
+
+- 20 particles/generations each like HSP
+
+- Experiment repeted on the entire dataset 5 times each.
+
+- To collect as unbiased and representative a dataset as   possible (again like HSP)
+
+- Compile Averages just to see (average over 5 runs,   average overall)
