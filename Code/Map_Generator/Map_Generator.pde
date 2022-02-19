@@ -7,7 +7,7 @@ Date:     28/01/2021
 */
 
 static int MAPSIZE = 50;  //number of cities per map
-static int MAPNUM = 3;    //number of maps generated
+static int MAPNUM = 100;    //number of maps generated
 
 void draw(){
   for (int i = 0; i < MAPNUM; i++)
@@ -21,7 +21,7 @@ void draw(){
       }
       
       //save strings persistently in a text file
-      saveStrings("C:/Users/C14460702/Dissertation/Data/Maps (size-"+ MAPSIZE + ")/map" + i + ".txt", maptxt);
+      saveStrings("C:/Users/C14460702/Dissertation/Data/Maps/Size - "+ MAPSIZE + "/map" + i + ".txt", maptxt);
   }
   
   exit(); //clost program after completion
