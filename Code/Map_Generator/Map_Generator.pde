@@ -6,7 +6,7 @@ Authur:   Elihu Essien-Thompson
 Date:     28/01/2021
 */
 
-static int MAPSIZE = 50;  //number of cities per map
+static int MAPSIZE = 30;  //number of cities per map
 static int MAPNUM = 100;    //number of maps generated
 
 void draw(){
