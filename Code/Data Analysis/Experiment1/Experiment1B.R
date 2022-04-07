@@ -10,11 +10,9 @@ for (i in seq(0,90,10)){
   assign(paste("elt",i, sep = ""), read.delim(path(i), header=FALSE, sep=",", dec="."))
 }
 
-IDs <- 1:nrow(elt0)
-
 
 # data frame for storing AUC data
-elt.AUC.df <- data.frame(ID <- IDs)
+elt.AUC.df <- data.frame(ID <- 1:nrow(elt0))
 
 # assign trapz function to get AUC for all data
 # giving each variant its own column
@@ -85,3 +83,4 @@ for(i in seq(0,90,10)){
 }
 rm(list = x, x, IDs, i, path)
 rm(elt.AUC.df, averages, standardDeviation, elt.Stat, elt.stat2, value, class)
+

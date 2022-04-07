@@ -29,3 +29,4 @@ ggplot(SS.AVG.df, aes(x=ID)) +
 
 # clean up
 rm(base.SS.data, elt.data, elt.ss.data, SS.AVG.df)
+rm(base.SS.avg, elt.avg, elt.ss.avg, ID, path1, path2, path3)
