@@ -33,12 +33,9 @@ for(i in 2:ncol(elt.AUC.df)){
   standardDeviation = c(standardDeviation, sd(elt.AUC.df[,i]))
 }
 
-averages
-standardDeviation
 
-x <- seq(0,90, 10)
 
-elt.Stat <- data.frame(ID  <- x, 
+elt.Stat <- data.frame(ID  <- seq(0,90, 10), 
                        avg <- averages,
                        std <- standardDeviation)
 
@@ -60,10 +57,10 @@ ggplot(elt.Stat, aes(x = ID)) +
 value <- c()
 class <- c()
 for(i in 1:nrow(elt.AUC.df)){
-  value <- c(value, elt.AUC.df$elt10[i])
+  value <- c(value, elt.AUC.df$elt0[i])
   class <- c(class, "elt0")
   
-  value <- c(value, elt.AUC.df$elt20[i])
+  value <- c(value, elt.AUC.df$elt10[i])
   class <- c(class, "elt10")
 }
 
@@ -81,6 +78,6 @@ x <- c()
 for(i in seq(0,90,10)){
   x <- c(x, paste("elt", i, sep = ""))
 }
-rm(list = x, x, IDs, i, path)
+rm(list = x, x, i, path)
 rm(elt.AUC.df, averages, standardDeviation, elt.Stat, elt.stat2, value, class)
-
+rm(avg, ID, std)

@@ -11,13 +11,13 @@ Date:     02/03/2021
 */
 
 final int MAPSIZE = 10;
-final String expName = "Experiment2B";
+final String expName = "Experiment1B";
 final String fileName = "";
 String data;
 
 void draw(){
   
-  for(int i=1; i<100; i++)
+  for(int i=0; i<90; i+=10)
   {
     loadData(i);
     formatAndSave(i);
