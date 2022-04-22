@@ -123,6 +123,7 @@ wilcox.test(value ~ class, data = filter(Stat.df, class == "RBS" | class == "TS"
 
 
 # clean up
-rm(path1, path2, path3)
-rm(SUS.avg, RBS.avg, TS.avg, AVG.df)
-rm(value, class, Stat.df, aova.data)
+rm(path1, path2, path3, SUS.data, RBS.data, TS.data)
+rm(ID, SUS.avg, RBS.avg, TS.avg, AVG.df)
+rm(trapezoidal, AUC.df, SUS.auc, RBS.auc, TS.auc)
+rm(Stat.df, aova.data, value, class, row)

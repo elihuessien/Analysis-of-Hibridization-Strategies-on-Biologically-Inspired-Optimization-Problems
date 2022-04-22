@@ -11,21 +11,21 @@ Date:     02/03/2021
 */
 
 final int MAPSIZE = 10;
-final String expName = "Experiment1B";
-final String fileName = "";
+final String expName = "Experiment3";
+final String fileName = "MPSO(25%)";
 String data;
 
 void draw(){
   
-  for(int i=0; i<90; i+=10)
+  /*for(int i=0; i<90; i+=10)
   {
     loadData(i);
     formatAndSave(i);
-  }
+  }*/
   
-  /*
+  
   loadData();
-  formatAndSave();*/
+  formatAndSave();
   exit();
 }
 

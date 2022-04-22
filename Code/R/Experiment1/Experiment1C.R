@@ -1,3 +1,7 @@
+library(pracma)
+library(dplyr)
+library(datasets)
+
 # data paths
 path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment1C/Size - 10/Base_SS.txt"
 path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment1C/Size - 10/Elt.txt"

@@ -12,14 +12,14 @@ Date:     17/02/2021
 
 ArrayList<Vector> map = new ArrayList<Vector>(); // list of vectors/cities
 static int MAPSIZE = 10;  // number of cities to expect
-static int MAPNUM = 2;    // maps id
+static int MAPNUM = 1;   // maps id
 
 int buffer = 50;         // for visual design purposes
 
 // example route to visualize. This variable will be 
 // collected from the result of the algorithms 
 // when requested for checking
-int[] route = {1, 4, 0, 7, 6, 9, 3, 8, 5, 2};
+int[] route = {6, 0, 7, 1, 4, 8, 5, 9, 3, 2};
 
 void setup(){
   size(600,600);          // 500x500 map + buffer of 100 on all sides
@@ -67,7 +67,7 @@ void draw(){
 
 void LoadMap(){
   // read from file
-  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Maps/Size (size-"+ MAPSIZE + ")/map" + MAPNUM + ".txt");
+  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Maps/Size - "+ MAPSIZE + "/map" + MAPNUM + ".txt");
   
   for (String line:lines)
   {
