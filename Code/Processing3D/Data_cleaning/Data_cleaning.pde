@@ -11,8 +11,8 @@ Date:     02/03/2021
 */
 
 final int MAPSIZE = 10;
-final String expName = "Experiment3";
-final String fileName = "MPSO(25%)";
+final String expName = "Experiment4";
+final String fileName = "ACO_GA_Hybrid";
 String data;
 
 void draw(){

@@ -12,14 +12,14 @@ Date:     17/02/2021
 
 ArrayList<Vector> map = new ArrayList<Vector>(); // list of vectors/cities
 static int MAPSIZE = 10;  // number of cities to expect
-static int MAPNUM = 1;   // maps id
+static int MAPNUM = 6;   // maps id
 
 int buffer = 50;         // for visual design purposes
 
 // example route to visualize. This variable will be 
 // collected from the result of the algorithms 
 // when requested for checking
-int[] route = {6, 0, 7, 1, 4, 8, 5, 9, 3, 2};
+int[] route = {8, 0, 6, 2, 1, 4, 5, 7, 9, 3};
 
 void setup(){
   size(600,600);          // 500x500 map + buffer of 100 on all sides
@@ -27,7 +27,7 @@ void setup(){
 }
 
 void draw(){
-  background(100,100,100);
+  background(240,240,240);
   
   
   // draw black frame
@@ -40,7 +40,7 @@ void draw(){
   
   
   //draw route
-  stroke(0, 0, 150);
+  stroke(240, 0, 0);
   strokeWeight(2);
   for(int i = 0; i < (route.length); i++)
   {
@@ -56,8 +56,8 @@ void draw(){
   
   
   // draw all cities
-  fill(100, 260, 255);
-  stroke(0, 0, 255);
+  fill(255, 120, 0);
+  stroke(255, 255, 0);
   strokeWeight(1);
   for (Vector v : map) {
     v.render();

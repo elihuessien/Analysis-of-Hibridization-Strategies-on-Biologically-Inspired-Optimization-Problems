@@ -1,6 +1,7 @@
 library(pracma)
 library(dplyr)
 library(datasets)
+library(ggplot2)
 
 # data paths
 path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment1C/Size - 10/Base_SS.txt"
