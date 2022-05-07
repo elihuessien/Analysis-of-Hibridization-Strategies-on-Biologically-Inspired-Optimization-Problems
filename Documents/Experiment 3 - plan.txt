@@ -1,0 +1,26 @@
+PSO experiment 
+
+Questions
+A) PSO: Inertia weight?
+B) MPSO: alpha-beta? (the paper proposed creating 10 combinations to choose from)
+C) PSO vs MPSO?
+
+
+Options
+itPerc = 50%, %100
+alpha = 0%, 20%, %50
+beta = 100%, 50%
+
+Combinations (Alpha - Beta, Delta)
+(0% - 50%, 50%)
+(0% - 100%, 50%)
+(0% - 100%, 100%)
+(20% - 80%, 50%)
+(20% - 80%, 100%)
+(30% - 70%, 50%)
+(30% - 70%, 100%)
+
+Answers
+A) A controvertial 80% (40% is best AUC, but 80% is best result)
+B) (30% - 70%, 50%)
+C)

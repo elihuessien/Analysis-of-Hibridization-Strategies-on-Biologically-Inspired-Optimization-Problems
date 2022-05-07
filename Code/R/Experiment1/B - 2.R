@@ -95,8 +95,8 @@ wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "ELT-10%" | Class == "
 
 
 # Clean Up
-rm(path1, path2, path3, path4, path5)
-rm(SUS.data, RBS.data, TS.data, Benchmark)
-rm(SUS.avg, RBS.avg, TS.avg, AVG.df)
-rm(SUS.auc, RBS.auc, AUC.df)
+rm(path1, path2, path3, path4)
+rm(ss.data, elt.data, lss.data, benchmark)
+rm(ss.avg, elt.avg, lss.avg, AVG.df)
+rm(ss.auc, elt.auc, lss.auc, AUC.df)
 rm(ID, Value, Class, i)

@@ -1,4 +1,11 @@
 ACO experiment
 
 Questions
-A - 1) Ant System 
+A) Ant System: alpha-beta weights?
+B) Max Min: Clamp ranges?
+C) AS vs MMAS?
+
+Answers
+A)
+B)
+C)
