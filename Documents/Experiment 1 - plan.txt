@@ -1,0 +1,13 @@
+GA experiment 
+
+Questions
+A - 1) Fitness Function: TS percentage (50-100)?
+A - 2) Fitness Function: SUS vs RBS vs TS?
+B - 1) Enchansers: Best Elitist %?
+B - 2) Enchansers: SUS vs SS vs my LSS?
+
+Answers
+A - 1) Original TS is better 100%
+A - 2) SUS/RBS (SUS)
+B - 1) 10%
+B - 2) Doesn't really matter (Original SS is a tiny fraction better)

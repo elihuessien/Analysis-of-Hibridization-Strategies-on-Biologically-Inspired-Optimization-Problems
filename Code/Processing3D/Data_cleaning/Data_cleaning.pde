@@ -10,22 +10,24 @@ Authur:   Elihu Essien-Thompson
 Date:     02/03/2021
 */
 
-final int MAPSIZE = 10;
-final String expName = "Experiment4";
-final String fileName = "ACO_GA_Hybrid";
+final String expName = "Experiment 1";
+final char section = 'B';
+final int part = 2;
+final String fileName = "LSS";
 String data;
 
 void draw(){
-  
-  /*for(int i=0; i<90; i+=10)
+  /*
+  for(int i=0; i<51; i+=10)
   {
-    loadData(i);
-    formatAndSave(i);
+    loadData(i+"%");
+    formatAndSave(i+"%");
   }*/
   
   
   loadData();
   formatAndSave();
+  
   exit();
 }
 
@@ -34,18 +36,18 @@ void loadData()
 {
   data = "";
   // read from file
-  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/Size - "+ MAPSIZE + "/"+fileName+".txt");
+  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+fileName+".txt");
   
   for (String line: lines){
     data += line;
   }
 }
 
-void loadData(int x)
+void loadData(String x)
 {
   data = "";
   // read from file
-  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/Size - "+ MAPSIZE + "/"+x+"%.txt");
+  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + x + ".txt");
   
   for (String line: lines){
     data += line;
@@ -55,6 +57,7 @@ void loadData(int x)
 void formatAndSave(){
   String data2 = data.replace("[","");
   
+  //if not already cleaned
   if(!data.equals(data2)){
     //cleaning
     data = data2;
@@ -64,13 +67,14 @@ void formatAndSave(){
     String[] lines = data.split("]");
     println(lines.length);
     //replace
-    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/Size - "+ MAPSIZE + "/"+fileName+".txt", lines);
+    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + ".txt", lines);
   }else{println("Already Cleaned!");}
 }
 
-void formatAndSave(int x){
+void formatAndSave(String x){
   String data2 = data.replace("[","");
   
+  //if not already cleaned
   if(!data.equals(data2)){
     //cleaning
     data = data2;
@@ -80,6 +84,6 @@ void formatAndSave(int x){
     String[] lines = data.split("]");
     println(lines.length);
     //replace
-    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/Size - "+ MAPSIZE + "/"+x+"%.txt", lines);
+    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + x + ".txt", lines);
   }else{println("Already Cleaned!");}
 }
