@@ -23,4 +23,4 @@ Combinations (Alpha - Beta, Delta)
 Answers
 A) A controvertial 80% (40% is best AUC, but 80% is best result)
 B) (30% - 70%, 50%)
-C)
+C) MPSO
