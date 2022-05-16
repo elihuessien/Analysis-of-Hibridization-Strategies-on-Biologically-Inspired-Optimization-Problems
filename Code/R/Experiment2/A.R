@@ -72,6 +72,9 @@ m3.auc <- trapezoidal(m3.data)
 m4.auc <- trapezoidal(m4.data)
 m5.auc <- trapezoidal(m5.data)
 
+mean(m5.auc)
+sd(m5.auc)
+
 
 ID <- c()
 Value <- c()
@@ -119,7 +122,7 @@ ggplot(filter(AUC.df, Class == "Pbest - 0.0005" | Class == "Pbest - 0"), aes(x =
   guides(alpha ="none") +
   labs(title = "Learning Rate (AUC)", x="Value", fill = "MMAS Tmin Settings")
 
-wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "Pbest - 0.0005" | Class == "Pbest - 0"))
+wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "Pbest - 0.0005" | Class == "Pbest - 0.5"))
 
 
 

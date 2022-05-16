@@ -27,7 +27,7 @@ Class <- c()
 for(i in 1:nrow(base.data)){
   ID <- c(ID, i)
   Value <- c(Value, base.avg[i])
-  Class <- c(Class, "GA-TS")
+  Class <- c(Class, "GA-ELT(TS)")
   
   ID <- c(ID, i)
   Value <- c(Value, ss.avg[i])
@@ -67,7 +67,7 @@ for(i in 1:length(ss.auc)){
   
   ID <- c(ID, i)
   Value <- c(Value, base.auc[i])
-  Class <- c(Class, "Base TS")
+  Class <- c(Class, "ELT(TS)")
 }
 
 AUC.df <- data.frame(ID, Value, Class)
@@ -88,7 +88,8 @@ ggplot(AUC.df, aes(x = Value, fill = Class, alpha = 1)) +
 
 wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "ELT-10%" | Class == "SS"))
 
-
+mean(lss.auc)
+sd(lss.auc)
 
 # Clean Up
 rm(path1, path2, path3, path4)

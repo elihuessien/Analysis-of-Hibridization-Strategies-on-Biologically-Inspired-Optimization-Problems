@@ -5,11 +5,9 @@ library(datasets)
 
 path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 3/C/PSO.txt"
 path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 3/C/MPSO.txt"
-path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Benchmark/Size - 10/GreedyOptimizer.txt"
 
 pso.data <- read.table(path1, header=FALSE, sep=",", dec=".")
 mpso.data <- read.table(path2, header=FALSE, sep=",", dec=".")
-benchmark <- read.table(path3, header=FALSE, sep=",", dec=".")
 
 
 
@@ -24,15 +22,11 @@ Class <- c()
 for(i in 1:nrow(pso.data)){
   ID <- c(ID, i)
   Value <- c(Value, pso.avg[i])
-  Class <- c(Class, "(w - 80%) PSO")
+  Class <- c(Class, "PSO")
   
   ID <- c(ID, i)
   Value <- c(Value, mpso.avg[i])
-  Class <- c(Class, "(w - 80%) MPSO (30% - 70%, 50%)")
-  
-  ID <- c(ID, i)
-  Value <- c(Value, rowMeans(benchmark))
-  Class <- c(Class, "Greedy Optimizer")
+  Class <- c(Class, "MPSO")
 }
 
 
@@ -82,7 +76,8 @@ ggplot(AUC.df, aes(x = Value, fill = Class, alpha = 1)) +
 wilcox.test(Value ~ Class, data = AUC.df)
 
 
-
+mean(mpso.auc)
+sd(mpso.auc)
 
 
 # Clean Up
@@ -91,3 +86,4 @@ rm(pso.data, mpso.data, benchmark)
 rm(pso.avg, mpso.avg, AVG.df)
 rm(pso.auc, mpso.auc, AUC.df)
 rm(ID, i, Value, Class)
+

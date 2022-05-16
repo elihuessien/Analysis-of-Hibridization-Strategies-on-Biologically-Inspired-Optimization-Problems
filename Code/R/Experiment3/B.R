@@ -81,6 +81,9 @@ t5.auc <- trapezoidal(t5.data)
 t6.auc <- trapezoidal(t6.data)
 t7.auc <- trapezoidal(t7.data)
 
+mean(t7.auc)
+sd(t7.auc)
+
 ID <- c()
 Value <- c()
 Class <- c()
@@ -101,13 +104,13 @@ for(i in 1:nrow(t1.data)){
   Value <- c(Value, t6.auc[i])
   Value <- c(Value, t7.auc[i])
   
-  Class <- c(Class, "(0% - 50%, 50%)")
-  Class <- c(Class, "(0% - 100%, 50%)")
-  Class <- c(Class, "(0% - 100%, 100%)")
-  Class <- c(Class, "(20% - 80%, 50%)")
-  Class <- c(Class, "(20% - 80%, 100%)")
-  Class <- c(Class, "(30% - 70%, 50%)")
-  Class <- c(Class, "(30% - 70%, 100%)")
+  Class <- c(Class, "(0-5,5)")
+  Class <- c(Class, "(0-10,5)")
+  Class <- c(Class, "(0-10,10)")
+  Class <- c(Class, "(2-8,5)")
+  Class <- c(Class, "(2-8,10)")
+  Class <- c(Class, "(3-7,5)")
+  Class <- c(Class, "(3-7,10)")
 }
 
 AUC.df <- data.frame(ID, Value, Class)
@@ -129,12 +132,12 @@ AUC.df %>%
   labs(title = "Learning Rate (AUC)", x="Value", fill = "(Alpha - Beta, IterationPercentage)")
 
 
-wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "(30% - 70%, 50%)" | Class == "(20% - 80%, 100%)"))
+wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "(2-8,5)" | Class == "(0-10,10)"))
 
 
 
 
-# Clean up
+  # Clean up
 x <- c()
 y <- c()
 z <- c()

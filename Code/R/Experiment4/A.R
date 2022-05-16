@@ -3,9 +3,9 @@ library(pracma)
 library(dplyr)
 library(datasets)
 
-path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/GA-SS.txt"
-path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/AS.txt"
-path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/MPSO.txt"
+path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/GA.txt"
+path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/ACO.txt"
+path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO.txt"
 path4 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/ACO_GA_Hybrid.txt"
 path5 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO_ACO_Hybrid.txt"
 path6 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO_GA_Hybrid.txt"
@@ -35,15 +35,15 @@ Class <- c()
 for(i in 1:nrow(ga.data)){
   ID <- c(ID, i)
   Value <- c(Value, ga.avg[i])
-  Class <- c(Class, "GA - SUS")
+  Class <- c(Class, "GA")
   
   ID <- c(ID, i)
   Value <- c(Value, aco.avg[i])
-  Class <- c(Class, "ACO - AS")
+  Class <- c(Class, "ACO")
   
   ID <- c(ID, i)
   Value <- c(Value, pso.avg[i])
-  Class <- c(Class, "PSO - MPSO")
+  Class <- c(Class, "PSO")
   
   ID <- c(ID, i)
   Value <- c(Value, aco_ga.avg[i])
@@ -81,6 +81,9 @@ aco_ga.auc <- trapezoidal(aco_ga.data)
 aco_pso.auc <- trapezoidal(aco_pso.data)
 pso_ga.auc <- trapezoidal(pso_ga.data)
 
+mean(ga.auc)
+sd(ga.auc)
+
 ID <- c()
 Value <- c()
 Class <- c()
@@ -103,7 +106,7 @@ for(i in 1:nrow(ga.data)){
   
   ID <- c(ID, i)
   Value <- c(Value, aco_pso.auc[i])
-  Class <- c(Class, "ACO/PSO Hybrid")
+  Class <- c(Class, "PSO/ACO Hybrid")
   
   ID <- c(ID, i)
   Value <- c(Value, pso_ga.auc[i])
@@ -129,3 +132,12 @@ ggplot(filter(AUC.df, Class == "ACO/PSO Hybrid" | Class == "ACO - AS"), aes(x = 
   labs(title = "Learning Rate (AUC)", x="Value", fill = "Algorithm")
 
 wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "ACO/PSO Hybrid" | Class == "ACO - AS"))
+
+
+
+# Clean Up
+rm(path1, path2, path3, path4, path5, path6, path7)
+rm(aco.data, pso.data, ga.data, aco.ga.data, pso.ga.data, pso.aco.data)
+rm(aco.avg, pso.avg, ga.avg, aco.ga.avg, pso.ga.avg, pso.aco.avg, AVG.df)
+rm(aco.auc, pso.auc, ga.auc, aco.ga.auc, pso.ga.auc, pso.aco.auc, AUC.df)
+rm(size, IDs, Value, Class, i, Benchmark)

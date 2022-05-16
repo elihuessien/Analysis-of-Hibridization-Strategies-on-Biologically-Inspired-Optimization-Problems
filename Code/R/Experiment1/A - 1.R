@@ -103,8 +103,12 @@ wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "1" | Class == "0.7"))
 
 
 
+for (i in seq(50,100,10)){
+  return (mean(get(paste("TS", i, ".auc", sep = ""))))
+}
 
-
+mean(get(paste("TS", 100, ".auc", sep = "")))
+sd(get(paste("TS",50, ".auc", sep = "")))
 
 # Clean up
 x <- c()

@@ -48,6 +48,8 @@ for (i in seq(0,50,10)){
   assign(paste("elt", i, ".auc", sep = ""), trapezoidal(get(paste("elt",i, sep = ""))))
 }
 
+mean(get(paste("elt", 50, ".auc", sep = "")))
+sd(get(paste("elt", 50, ".auc", sep = "")))
 
 ID <- c()
 Value <- c()

@@ -10,24 +10,24 @@ Authur:   Elihu Essien-Thompson
 Date:     02/03/2021
 */
 
-final String expName = "Experiment 1";
-final char section = 'B';
-final String part = " - 1";
-final String fileName = "RBS";
+final String expName = "Experiment 4";
+final String section = "Size - 50";
+final String part = "";
+final String fileName = "GA";
 String data;
 
 void draw(){
-  
-  for(int i=50; i<101; i+=10)
+  /*
+  for(int i=0; i<51; i+=10)
   {
     loadData(i+"%");
     formatAndSave(i+"%");
   }
+  */
   
-  /*
   loadData();
   formatAndSave();
-  */
+  
   exit();
 }
 

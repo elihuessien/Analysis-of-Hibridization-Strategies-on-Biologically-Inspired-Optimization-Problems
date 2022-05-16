@@ -14,11 +14,11 @@ for (i in seq(1,10,1)){
 }
 
 
-
+#assign(paste("w",0, sep = ""), read.delim(path(""), header=FALSE, sep=",", dec="."))
 
 
 # Analysing Averages
-for (i in seq(1,10,1)){
+for (i in seq(0,10,1)){
   assign(paste("w", i, ".avg", sep = ""), colMeans(get(paste("w",i, sep = ""))))
 }
 
@@ -27,10 +27,10 @@ ID <- c()
 Value <- c()
 Class <- c()
 for(i in 1:length(w1.avg)){
-  for(j in seq(1,9,1)){
+  for(j in seq(0,10,1)){
     ID <- c(ID, i)
     Value <- c(Value, get(paste("w", j, ".avg", sep = ""))[i])
-    Class <- c(Class, paste("w - ", j, "0%", sep = ""))
+    Class <- c(Class, paste("w - ", j/10, "", sep = ""))
   }
 }
 
@@ -46,21 +46,25 @@ ggplot(AVG.df, mapping = aes(x = ID, y = Value, colour = Class)) +
 
 
 # Analysing AUC
-for (i in seq(1,10,1)){
+for (i in seq(0,10,1)){
   assign(paste("w", i, ".auc", sep = ""), trapezoidal(get(paste("w",i, sep = ""))))
 }
 
+
+mean(w10.auc)
+sd(w10.auc)
 
 ID <- c()
 Value <- c()
 Class <- c()
 for(i in 1:length(w1.auc)){
-  for(j in seq(1,9,1)){
+  for(j in seq(0,10,1)){
     ID <- c(ID, i)
     Value <- c(Value, get(paste("w", j, ".auc", sep = ""))[i])
-    Class <- c(Class, paste("w - ", j, "0%", sep = ""))
+    Class <- c(Class, paste("w - ", j/10, sep = ""))
   }
 }
+
 
 AUC.df <- data.frame(ID, Value, Class)
 
@@ -74,14 +78,14 @@ ggplot(AUC.df, aes(x = Class, y = Value, colour = Class)) +
   labs(title = "Learning Rate (AUC)", x="Inertia Weight")
 
 AUC.df %>%
-  filter(Class == "w - 80%" | Class == "w - 40%") %>%
+  filter(Class == "w - 0.4" | Class == "w - 0") %>%
   ggplot(aes(x = Value, fill = Class, alpha = 1)) +
   geom_histogram(position = "identity") +
   guides(alpha ="none") +
   labs(title = "Learning Rate (AUC)", x="Value", fill = "Inertia Weight")
 
 
-wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "w - 80%" | Class == "w - 40%"))
+wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "w - 0.4" | Class == "w - 0"))
 
 
 
@@ -92,7 +96,7 @@ wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "w - 80%" | Class == "
 x <- c()
 y <- c()
 z <- c()
-for(i in seq(1,10,1)){
+for(i in seq(0,10,1)){
   x <- c(x, paste("w", i, sep = ""))
   y <- c(y, paste("w", i, ".avg", sep = ""))
   z <- c(z, paste("w", i, ".auc", sep = ""))
@@ -102,3 +106,4 @@ rm(list = y, y)
 rm(list = z, z, i, j, path)
 rm(ID, Value, Class, AVG.df, AUC.df)
 rm(trapezoidal)
+

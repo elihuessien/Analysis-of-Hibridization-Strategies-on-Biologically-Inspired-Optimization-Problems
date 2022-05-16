@@ -69,6 +69,9 @@ for(i in 1:length(SUS.auc)){
   Class <- c(Class, "RBS")
 }
 
+mean(TS.auc)
+sd(SUS.auc)
+
 AUC.df <- data.frame(ID, Value, Class)
 
 ggplot(AUC.df, aes(x = ID, y = Value, colour = Class)) +
