@@ -5,7 +5,7 @@ library(datasets)
 
 path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/A - 2/SUS.txt"
 path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/A - 2/RBS.txt"
-path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/A - 2/TS(60).txt"
+path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/A - 2/TS.txt"
 path4 <- "C:/Users/C14460702/Dissertation/Data/Results/Benchmark/Size - 10/GreedyOptimizer.txt"
 
 SUS.data <- read.table(path1, header=FALSE, sep=",", dec=".")
@@ -35,9 +35,6 @@ for(i in 1:nrow(SUS.data)){
   Value <- c(Value, TS.avg[i])
   Class <- c(Class, "GA-TS")
   
-  ID <- c(ID, i)
-  Value <- c(Value, rowMeans(Benchmark))
-  Class <- c(Class, "Greedy Optimizer")
 }
 
 AVG.df <- data.frame(ID, Value, Class)
@@ -54,6 +51,7 @@ ggplot(AVG.df, mapping = aes(x = ID, y = Value, colour = Class)) +
 # Analysing AUC
 SUS.auc <- trapezoidal(SUS.data)
 RBS.auc <- trapezoidal(RBS.data)
+TS.auc <- trapezoidal(TS.data)
 ID <- c()
 Value <- c()
 Class <- c()
@@ -61,6 +59,10 @@ for(i in 1:length(SUS.auc)){
   ID <- c(ID, i)
   Value <- c(Value, SUS.auc[i])
   Class <- c(Class, "SUS")
+  
+  ID <- c(ID, i)
+  Value <- c(Value, TS.auc[i])
+  Class <- c(Class, "TS")
   
   ID <- c(ID, i)
   Value <- c(Value, RBS.auc[i])
@@ -91,5 +93,5 @@ wilcox.test(Value ~ Class, data = AUC.df)
 rm(path1, path2, path3, path4, path5)
 rm(SUS.data, RBS.data, TS.data, Benchmark)
 rm(SUS.avg, RBS.avg, TS.avg, AVG.df)
-rm(SUS.auc, RBS.auc, AUC.df)
+rm(SUS.auc, RBS.auc, TS.auc, AUC.df)
 rm(ID, Value, Class, i)

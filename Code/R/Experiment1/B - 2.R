@@ -5,12 +5,12 @@ library(datasets)
 
 path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/B - 2/SS.txt"
 path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/B - 2/LSS.txt"
-path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/B - 2/ELT.txt"
+path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 1/B - 2/Base.txt"
 path4 <- "C:/Users/C14460702/Dissertation/Data/Results/Benchmark/Size - 10/GreedyOptimizer.txt"
 
 ss.data <- read.table(path1, header=FALSE, sep=",", dec=".")
 lss.data <- read.table(path2, header=FALSE, sep=",", dec=".")
-elt.data <- read.table(path3, header=FALSE, sep=",", dec=".")
+base.data <- read.table(path3, header=FALSE, sep=",", dec=".")
 benchmark <- read.table(path4, header=FALSE, sep=",", dec=".")
 
 
@@ -19,27 +19,23 @@ benchmark <- read.table(path4, header=FALSE, sep=",", dec=".")
 # Analyze averages
 ss.avg <- colMeans(ss.data)
 lss.avg <- colMeans(lss.data)
-elt.avg <- colMeans(elt.data)
+base.avg <- colMeans(base.data)
 
 ID <- c()
 Value <- c()
 Class <- c()
-for(i in 1:nrow(sus.data)){
+for(i in 1:nrow(base.data)){
   ID <- c(ID, i)
-  Value <- c(Value, elt.avg[i])
-  Class <- c(Class, "GA-ELT(SUS)")
+  Value <- c(Value, base.avg[i])
+  Class <- c(Class, "GA-TS")
   
   ID <- c(ID, i)
   Value <- c(Value, ss.avg[i])
-  Class <- c(Class, "GA-SS(SUS)")
+  Class <- c(Class, "GA-SS(TS)")
   
   ID <- c(ID, i)
   Value <- c(Value, lss.avg[i])
-  Class <- c(Class, "GA-LSS(SUS)")
-  
-  ID <- c(ID, i)
-  Value <- c(Value, rowMeans(benchmark))
-  Class <- c(Class, "Greedy Optimizer")
+  Class <- c(Class, "GA-LSS(TS)")
 }
 
 AVG.df <- data.frame(ID, Value, Class)
@@ -55,7 +51,7 @@ ggplot(AVG.df, mapping = aes(x = ID, y = Value, colour = Class)) +
 
 # Analyzing AUC
 ss.auc <- trapezoidal(ss.data)
-elt.auc <- trapezoidal(elt.data)
+base.auc <- trapezoidal(base.data)
 lss.auc <- trapezoidal(lss.data)
 ID <- c()
 Value <- c()
@@ -63,15 +59,15 @@ Class <- c()
 for(i in 1:length(ss.auc)){
   ID <- c(ID, i)
   Value <- c(Value, ss.auc[i])
-  Class <- c(Class, "SS")
+  Class <- c(Class, "SS(TS)")
   
   ID <- c(ID, i)
   Value <- c(Value, lss.auc[i])
-  Class <- c(Class, "LSS")
+  Class <- c(Class, "LSS(TS)")
   
   ID <- c(ID, i)
-  Value <- c(Value, elt.auc[i])
-  Class <- c(Class, "ELT-10%")
+  Value <- c(Value, base.auc[i])
+  Class <- c(Class, "Base TS")
 }
 
 AUC.df <- data.frame(ID, Value, Class)
@@ -96,7 +92,7 @@ wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "ELT-10%" | Class == "
 
 # Clean Up
 rm(path1, path2, path3, path4)
-rm(ss.data, elt.data, lss.data, benchmark)
-rm(ss.avg, elt.avg, lss.avg, AVG.df)
-rm(ss.auc, elt.auc, lss.auc, AUC.df)
+rm(ss.data, base.data, lss.data, benchmark)
+rm(ss.avg, base.avg, lss.avg, AVG.df)
+rm(ss.auc, base.auc, lss.auc, AUC.df)
 rm(ID, Value, Class, i)

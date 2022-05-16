@@ -34,7 +34,7 @@ for(i in 1:length(TS50.avg)){
   for(j in seq(50,100,10)){
     ID <- c(ID, i)
     Value <- c(Value, get(paste("TS", j, ".avg", sep = ""))[i])
-    Class <- c(Class, paste("TS - ", j, "%", sep = ""))
+    Class <- c(Class, paste("", j/100, "", sep = ""))
   }
 }
 
@@ -76,7 +76,7 @@ for(i in 1:length(TS50.auc)){
   for(j in seq(50,100,10)){
     ID <- c(ID, i)
     Value <- c(Value, get(paste("TS", j, ".auc", sep = ""))[i])
-    Class <- c(Class, paste("TS - ", j, "%", sep = ""))
+    Class <- c(Class, paste("", j/100, "", sep = ""))
   }
 }
 
@@ -92,14 +92,14 @@ ggplot(AUC.df, aes(x = Class, y = Value, colour = Class)) +
   labs(title = "Learning Rate (AUC)", x="Delta Percentage")
 
 AUC.df %>%
-  filter(Class == "TS - 100%" | Class == "TS - 60%") %>%
+  filter(Class == "1" | Class == "0.9") %>%
   ggplot(aes(x = Value, fill = Class, alpha = 1)) +
     geom_histogram(position = "identity") +
     guides(alpha ="none") +
     labs(title = "Learning Rate (AUC)", x="Value", fill = "delta percentage")
 
 
-wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "TS - 100%" | Class == "TS - 60%"))
+wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "1" | Class == "0.7"))
 
 
 

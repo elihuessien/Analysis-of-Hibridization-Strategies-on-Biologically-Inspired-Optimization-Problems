@@ -12,22 +12,22 @@ Date:     02/03/2021
 
 final String expName = "Experiment 1";
 final char section = 'B';
-final int part = 2;
-final String fileName = "LSS";
+final String part = " - 1";
+final String fileName = "RBS";
 String data;
 
 void draw(){
-  /*
-  for(int i=0; i<51; i+=10)
+  
+  for(int i=50; i<101; i+=10)
   {
     loadData(i+"%");
     formatAndSave(i+"%");
-  }*/
+  }
   
-  
+  /*
   loadData();
   formatAndSave();
-  
+  */
   exit();
 }
 
@@ -36,7 +36,7 @@ void loadData()
 {
   data = "";
   // read from file
-  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+fileName+".txt");
+  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section + part + "/"+fileName+".txt");
   
   for (String line: lines){
     data += line;
@@ -47,7 +47,7 @@ void loadData(String x)
 {
   data = "";
   // read from file
-  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + x + ".txt");
+  String[] lines = loadStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section + part + "/"+ fileName + x + ".txt");
   
   for (String line: lines){
     data += line;
@@ -67,7 +67,7 @@ void formatAndSave(){
     String[] lines = data.split("]");
     println(lines.length);
     //replace
-    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + ".txt", lines);
+    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section + part + "/"+ fileName + ".txt", lines);
   }else{println("Already Cleaned!");}
 }
 
@@ -84,6 +84,6 @@ void formatAndSave(String x){
     String[] lines = data.split("]");
     println(lines.length);
     //replace
-    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section+" - "+ part + "/"+ fileName + x + ".txt", lines);
+    saveStrings("C:/Users/C14460702/Dissertation/Data/Results/"+ expName+"/"+section + part + "/"+ fileName + x + ".txt", lines);
   }else{println("Already Cleaned!");}
 }
