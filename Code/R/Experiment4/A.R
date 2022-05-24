@@ -51,7 +51,7 @@ for(i in 1:nrow(ga.data)){
   
   ID <- c(ID, i)
   Value <- c(Value, aco_pso.avg[i])
-  Class <- c(Class, "ACO/PSO Hybrid")
+  Class <- c(Class, "PSO/ACO Hybrid")
   
   ID <- c(ID, i)
   Value <- c(Value, pso_ga.avg[i])
@@ -81,8 +81,8 @@ aco_ga.auc <- trapezoidal(aco_ga.data)
 aco_pso.auc <- trapezoidal(aco_pso.data)
 pso_ga.auc <- trapezoidal(pso_ga.data)
 
-mean(ga.auc)
-sd(ga.auc)
+mean(aco_pso.auc)
+sd(aco_pso.auc)
 
 ID <- c()
 Value <- c()
@@ -90,15 +90,15 @@ Class <- c()
 for(i in 1:nrow(ga.data)){
   ID <- c(ID, i)
   Value <- c(Value, ga.auc[i])
-  Class <- c(Class, "GA - SUS")
+  Class <- c(Class, "GA")
   
   ID <- c(ID, i)
   Value <- c(Value, aco.auc[i])
-  Class <- c(Class, "ACO - AS")
+  Class <- c(Class, "ACO")
   
   ID <- c(ID, i)
   Value <- c(Value, pso.auc[i])
-  Class <- c(Class, "PSO - MPSO")
+  Class <- c(Class, "PSO")
   
   ID <- c(ID, i)
   Value <- c(Value, aco_ga.auc[i])

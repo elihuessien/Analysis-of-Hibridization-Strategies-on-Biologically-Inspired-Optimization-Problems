@@ -5,16 +5,15 @@ library(datasets)
 
 
 path <- function(x){
-  return(paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 3/A/w(0.",x,").txt", sep = ""))
+  return(paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 3/A/w(",x,").txt", sep = ""))
 }
+
+
 
 # Dynamic global variable creation
-for (i in seq(1,10,1)){
-  assign(paste("w",i, sep = ""), read.delim(path(i), header=FALSE, sep=",", dec="."))
+for (i in seq(0,10,1)){
+  assign(paste("w",i, sep = ""), read.delim(path(i/10), header=FALSE, sep=",", dec="."))
 }
-
-
-#assign(paste("w",0, sep = ""), read.delim(path(""), header=FALSE, sep=",", dec="."))
 
 
 # Analysing Averages
@@ -85,7 +84,7 @@ AUC.df %>%
   labs(title = "Learning Rate (AUC)", x="Value", fill = "Inertia Weight")
 
 
-wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "w - 0.4" | Class == "w - 0"))
+wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "w - 1" | Class == "w - 0"))
 
 
 
