@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=http://www.w3.org/1999/xhtml lang=en xml:lang=en><!--
+ Page saved with SingleFile 
+ url: https://arxiv.org/abs/2009.02560 
+ saved date: Thu Jun 16 2022 01:58:57 GMT+0100 (Irish Standard Time)
+--><meta charset=utf-8>
+<title>[2009.02560] Particle Swarm Optimized Federated Learning For Industrial IoT and Smart City Services</title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name=citation_title content="Particle Swarm Optimized Federated Learning For Industrial IoT and Smart City Services">
+<meta name=citation_author content="Qolomany, Basheer">
+<meta name=citation_author content="Ahmad, Kashif">
+<meta name=citation_author content="Al-Fuqaha, Ala">
+<meta name=citation_author content="Qadir, Junaid">
+<meta name=citation_date content=2020/09/05>
+<meta name=citation_online_date content=2020/09/05>
+<meta name=citation_pdf_url content=https://arxiv.org/pdf/2009.02560>
+<meta name=citation_arxiv_id content=2009.02560>
+<meta name=citation_abstract content=" Most of the research on Federated Learning (FL) has focused on analyzing
+global optimization, privacy, and communication, with limited attention
+focusing on analyzing the critical matter of performing efficient local
+training and inference at the edge devices. One of the main challenges for
+successful and efficient training and inference on edge devices is the careful
+selection of parameters to build local Machine Learning (ML) models. To this
+aim, we propose a Particle Swarm Optimization (PSO)-based technique to optimize
+the hyperparameter settings for the local ML models in an FL environment. We
+evaluate the performance of our proposed technique using two case studies.
+First, we consider smart city services and use an experimental transportation
+dataset for traffic prediction as a proxy for this setting. Second, we consider
+Industrial IoT (IIoT) services and use the real-time telemetry dataset to
+predict the probability that a machine will fail shortly due to component
+failures. Our experiments indicate that PSO provides an efficient approach for
+tuning the hyperparameters of deep Long short-term memory (LSTM) models when
+compared to the grid search method. Our experiments illustrate that the number
+of clients-server communication rounds to explore the landscape of
+configurations to find the near-optimal parameters are greatly reduced (roughly
+by two orders of magnitude needing only 2%--4% of the rounds compared to state
+of the art non-PSO-based approaches). We also demonstrate that utilizing the
+proposed PSO-based technique to find the near-optimal configurations for FL and
+centralized learning models does not adversely affect the accuracy of the
+models.
+">
+<meta name=citation_doi content=10.48550/arXiv.2009.02560><meta name=twitter:site content=@arxiv>
+<meta name=twitter:card content=summary>
+<meta name=twitter:title content="Particle Swarm Optimized Federated Learning For Industrial IoT and...">
+<meta name=twitter:description content="Most of the research on Federated Learning (FL) has focused on analyzing
+global optimization, privacy, and communication, with limited attention
+focusing on analyzing the critical matter of...">
+<meta name=twitter:image content=https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png>
+<meta name=twitter:image:alt content="arXiv logo">
+<meta property=og:site_name content=arXiv.org>
+<meta property=og:title content="Particle Swarm Optimized Federated Learning For Industrial IoT and Smart City Services">
+<meta property=og:url content=https://arxiv.org/abs/2009.02560v1>
+<meta property=og:description content="Most of the research on Federated Learning (FL) has focused on analyzing
+global optimization, privacy, and communication, with limited attention
+focusing on analyzing the critical matter of performing efficient local
+training and inference at the edge devices. One of the main challenges for
+successful and efficient training and inference on edge devices is the careful
+selection of parameters to build local Machine Learning (ML) models. To this
+aim, we propose a Particle Swarm Optimization (PSO)-based technique to optimize
+the hyperparameter settings for the local ML models in an FL environment. We
+evaluate the performance of our proposed technique using two case studies.
+First, we consider smart city services and use an experimental transportation
+dataset for traffic prediction as a proxy for this setting. Second, we consider
+Industrial IoT (IIoT) services and use the real-time telemetry dataset to
+predict the probability that a machine will fail shortly due to component
+failures. Our experiments indicate that PSO provides an efficient approach for
+tuning the hyperparameters of deep Long short-term memory (LSTM) models when
+compared to the grid search method. Our experiments illustrate that the number
+of clients-server communication rounds to explore the landscape of
+configurations to find the near-optimal parameters are greatly reduced (roughly
+by two orders of magnitude needing only 2%--4% of the rounds compared to state
+of the art non-PSO-based approaches). We also demonstrate that utilizing the
+proposed PSO-based technique to find the near-optimal configurations for FL and
+centralized learning models does not adversely affect the accuracy of the
+models.">
+<style>#MathJax_Message{position:fixed;left:1em;bottom:1.5em;background-color:#E6E6E6;border:1px solid #959595;margin:0px;padding:2px 8px;z-index:102;color:black;font-size:80%;width:auto;white-space:nowrap}.sf-hidden{display:none!important}</style><link rel=canonical href=https://arxiv.org/abs/2009.02560><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"></head>
+<body class=with-cu-identity><div id=MathJax_Message style=display:none></div>
+ 
+ <noscript><iframe src="//arxivcu.containers.piwik.pro/5cd2af31-892f-43fc-89ba-dbb835c4ec39/noscript.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
+<aside class="slider-wrapper bps-banner" style=display:none>
+ 
+ 
+ 
+</aside><div class=flex-wrap-footer>
+ <header>
+ <a href=#content class=is-sr-only>Skip to main content</a>
+ 
+ <div class="columns is-vcentered is-hidden-mobile" id=cu-identity>
+ <div class=column id=cu-logo>
+ <a href=https://www.cornell.edu/><img src=data:null;base64, alt="Cornell University"></a>
+ </div>
+ 
+ <div class=column id=support-ack>
+ <a href=https://confluence.cornell.edu/x/ALlRF>We gratefully acknowledge support from<br>the Simons Foundation and member institutions.</a>
+ </div>
+ </div>
+ <div id=header class=is-hidden-mobile>
+ <a aria-hidden=true href="https://arxiv.org/abs/%7Burl_path('ignore_me')%7D"></a>
+ 
+ <div class="header-breadcrumbs is-hidden-mobile">
+ <a href=https://arxiv.org/><img src=data:null;base64, alt="arxiv logo" style=height:40px></a> <span>&gt;</span> <a href=https://arxiv.org/list/cs/recent>cs</a> <span>&gt;</span> arXiv:2009.02560
+ </div>
+ 
+ 
+ <div class="search-block level-right">
+ <form class="level-item mini-search" method=GET action=https://arxiv.org/search>
+ <div class="field has-addons">
+ <div class=control>
+ <input class="input is-small" type=text name=query placeholder=Search... aria-label="Search term or terms" value>
+ <p class=help><a href=https://arxiv.org/help>Help</a> | <a href=https://arxiv.org/search/advanced>Advanced Search</a></p>
+ </div>
+ <div class=control>
+ <div class="select is-small">
+ <select name=searchtype aria-label="Field to search">
+              <option value=all selected>All fields</option>
+              <option value=title>Title</option>
+              <option value=author>Author</option>
+              <option value=abstract>Abstract</option>
+              <option value=comments>Comments</option>
+              <option value=journal_ref>Journal reference</option>
+              <option value=acm_class>ACM classification</option>
+              <option value=msc_class>MSC classification</option>
+              <option value=report_num>Report number</option>
+              <option value=paper_id>arXiv identifier</option>
+              <option value=doi>DOI</option>
+              <option value=orcid>ORCID</option>
+              <option value=author_id>arXiv author ID</option>
+              <option value=help>Help pages</option>
+              <option value=full_text>Full text</option>
+            </select>
+ </div>
+ </div>
+ 
+ <button class="button is-small is-cul-darker">Search</button>
+ </div>
+ </form>
+ </div>
+ 
+ </div>
+ <div class="mobile-header sf-hidden">
+ <div class="columns is-mobile sf-hidden">
+ 
+ <div class="column logo-cornell sf-hidden"><a href=https://www.cornell.edu/ class=sf-hidden>
+ <picture class=sf-hidden>
+ <source media="(min-width: 501px)" srcset="data:null;base64, 400w" sizes=400w>
+ <source srcset="data:null;base64, 2x">
+ 
+ </picture>
+ </a></div>
+ 
+ </div>
+ </div>
+ </header>
+ <main>
+ 
+ 
+ <div id=content>
+ 
+<div id=abs-outer>
+ 
+ <div class=leftcolumn>
+ <div class=subheader>
+ <h1>Computer Science &gt; Machine Learning</h1>
+ </div>
+ <div class="header-breadcrumbs-mobile sf-hidden">
+ (cs)
+ </div>
+ 
+<div id=content-inner>
+ <div id=abs>
+ <div class=dateline>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ [Submitted on 5 Sep 2020]</div>
+ <h1 class="title mathjax"><span class="descriptor sf-hidden">Title:</span>Particle Swarm Optimized Federated Learning For Industrial IoT and Smart City Services</h1>
+ <div class=authors><span class="descriptor sf-hidden">Authors:</span><a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Qolomany%2C+B">Basheer Qolomany</a>, <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Ahmad%2C+K">Kashif Ahmad</a>, <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Al-Fuqaha%2C+A">Ala Al-Fuqaha</a>, <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Qadir%2C+J">Junaid Qadir</a></div>
+ 
+ 
+ 
+ <a class="mobile-submission-download sf-hidden" href=https://arxiv.org/pdf/2009.02560>Download PDF</a>
+ 
+ 
+ 
+ <blockquote class="abstract mathjax">
+ <span class="descriptor sf-hidden">Abstract:</span> Most of the research on Federated Learning (FL) has focused on analyzing
+global optimization, privacy, and communication, with limited attention
+focusing on analyzing the critical matter of performing efficient local
+training and inference at the edge devices. One of the main challenges for
+successful and efficient training and inference on edge devices is the careful
+selection of parameters to build local Machine Learning (ML) models. To this
+aim, we propose a Particle Swarm Optimization (PSO)-based technique to optimize
+the hyperparameter settings for the local ML models in an FL environment. We
+evaluate the performance of our proposed technique using two case studies.
+First, we consider smart city services and use an experimental transportation
+dataset for traffic prediction as a proxy for this setting. Second, we consider
+Industrial IoT (IIoT) services and use the real-time telemetry dataset to
+predict the probability that a machine will fail shortly due to component
+failures. Our experiments indicate that PSO provides an efficient approach for
+tuning the hyperparameters of deep Long short-term memory (LSTM) models when
+compared to the grid search method. Our experiments illustrate that the number
+of clients-server communication rounds to explore the landscape of
+configurations to find the near-optimal parameters are greatly reduced (roughly
+by two orders of magnitude needing only 2%--4% of the rounds compared to state
+of the art non-PSO-based approaches). We also demonstrate that utilizing the
+proposed PSO-based technique to find the near-optimal configurations for FL and
+centralized learning models does not adversely affect the accuracy of the
+models.
+ </blockquote>
+ 
+ <div class=metatable>
+ <table summary="Additional metadata"><tbody><tr>
+ <td class="tablecell label">Subjects:</td>
+ <td class="tablecell subjects">
+ <span class=primary-subject>Machine Learning (cs.LG)</span>; Neural and Evolutionary Computing (cs.NE); Machine Learning (stat.ML)</td>
+ <tr>
+ <td class="tablecell label">Cite as:</td>
+ <td class="tablecell arxivid"><span class=arxivid><a href=https://arxiv.org/abs/2009.02560>arXiv:2009.02560</a> [cs.LG]</span></td>
+ </tr>
+ <tr>
+ <td class="tablecell label">&nbsp;</td>
+ <td class="tablecell arxividv">(or <span class=arxivid>
+ <a href=https://arxiv.org/abs/2009.02560v1>arXiv:2009.02560v1</a> [cs.LG]</span> for this version)
+ </td>
+ </tr>
+ <tr>
+ <td class="tablecell label">&nbsp;</td>
+ <td class="tablecell arxivdoi">
+ <a href=https://doi.org/10.48550/arXiv.2009.02560>https://doi.org/10.48550/arXiv.2009.02560</a>
+ <div class=button-and-tooltip>
+ <button class=more-info aria-describedby=more-info-desc-1>
+ <svg height=15 role=presentation xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512"><path fill=currentColor d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg>
+ <span class=visually-hidden>Focus to learn more</span>
+ </button>
+ 
+ <div role=tooltip id=more-info-desc-1 class=sf-hidden>
+ 
+ arXiv-issued DOI via DataCite
+ </div>
+ </div>
+ </td>
+ </table>
+ </div>
+ </div>
+</div>
+ <div class=submission-history>
+ <h2>Submission history</h2> From: Basheer Qolomany [<a href=https://arxiv.org/show-email/76949874/2009.02560>view email</a>]
+ <br><strong>[v1]</strong>
+Sat, 5 Sep 2020 16:20:47 UTC (1,804 KB)<br></div>
+ </div>
+ 
+ <div class=extra-services>
+ <div class=full-text>
+ <a name=other></a>
+ <span class="descriptor sf-hidden">Full-text links:</span>
+ <h2>Download:</h2>
+ <ul>
+ <li><a href=https://arxiv.org/pdf/2009.02560 accesskey=f class="abs-button download-pdf">PDF</a></li>
+ <li><a href=https://arxiv.org/format/2009.02560 class="abs-button download-format">Other formats</a></ul>
+ <div class=abs-license>(<a href=http://arxiv.org/licenses/nonexclusive-distrib/1.0/ title="Rights to this article">license</a>)</div>
+ </div>
+ 
+ <div class=browse>
+ Current browse context: <div class=current>cs.LG</div>
+ <div class=prevnext>
+ <span class=arrow>
+ <a class="abs-button prev-url" href="https://arxiv.org/prevnext?id=2009.02560&amp;function=prev&amp;context=cs.LG" accesskey=p title="previous in cs.LG (accesskey p)">&lt;&nbsp;prev</a>
+ </span>
+ <span class=is-hidden-mobile>&nbsp; | &nbsp;</span>
+ <span class=arrow>
+ <a class="abs-button next-url" href="https://arxiv.org/prevnext?id=2009.02560&amp;function=next&amp;context=cs.LG" accesskey=n title="next in cs.LG (accesskey n)">next&nbsp;&gt;</a>
+ </span><br>
+ </div><div class=list>
+ <a class="abs-button abs-button-grey abs-button-small context-new" href=https://arxiv.org/list/cs.LG/new>new</a>
+ <span class=is-hidden-mobile> | </span>
+ <a class="abs-button abs-button-grey abs-button-small context-recent" href=https://arxiv.org/list/cs.LG/recent>recent</a>
+ <span class=is-hidden-mobile> | </span>
+ <a class="abs-button abs-button-grey abs-button-small context-id" href=https://arxiv.org/list/cs.LG/2009>2009</a>
+ </div><div class=abs-switch-cat>
+ Change to browse by:
+ <div class="switch context-change">
+ 
+ <a href="https://arxiv.org/abs/2009.02560?context=cs">cs</a><br class=is-hidden-mobile>
+ 
+ 
+ <a class=subclass href="https://arxiv.org/abs/2009.02560?context=cs.NE">cs.NE</a><br class=is-hidden-mobile>
+ 
+ 
+ <a href="https://arxiv.org/abs/2009.02560?context=stat">stat</a><br class=is-hidden-mobile>
+ 
+ 
+ <a class=subclass href="https://arxiv.org/abs/2009.02560?context=stat.ML">stat.ML</a><br class=is-hidden-mobile>
+ 
+ 
+ </div>
+ </div>
+ 
+ </div>
+ <div class=extra-ref-cite>
+ <h3>References &amp; Citations</h3>
+ <ul>
+ 
+ <li><a class="abs-button abs-button-small cite-ads" href=https://ui.adsabs.harvard.edu/abs/arXiv:2009.02560>NASA ADS</a><li><a class="abs-button abs-button-small cite-google-scholar" href="https://scholar.google.com/scholar_lookup?arxiv_id=2009.02560" target=_blank rel=noopener>Google Scholar</a></li>
+ <li><a class="abs-button abs-button-small cite-semantic-scholar" href=https://api.semanticscholar.org/arXiv:2009.02560 target=_blank rel=noopener>Semantic Scholar</a></li>
+ </ul>
+ <div style=clear:both></div>
+ </div>
+ <div class=dblp>
+ <h3><a href=https://dblp.uni-trier.de/>DBLP</a> - CS Bibliography</h3>
+ <div class=list>
+ <a href=https://dblp.uni-trier.de/db/journals/corr/corr2009.html#abs-2009-02560 title="listing on DBLP">listing</a> | <a href=https://dblp.uni-trier.de/rec/bibtex/journals/corr/abs-2009-02560 title="DBLP bibtex record">bibtex</a>
+ </div>
+ 
+ <div class=list>
+ <a href="https://dblp.uni-trier.de/search/author?author=Basheer%20Qolomany" title="DBLP author search">Basheer Qolomany</a><br><a href="https://dblp.uni-trier.de/search/author?author=Kashif%20Ahmad" title="DBLP author search">Kashif Ahmad</a><br><a href="https://dblp.uni-trier.de/search/author?author=Ala%20I.%20Al-Fuqaha" title="DBLP author search">Ala I. Al-Fuqaha</a><br><a href="https://dblp.uni-trier.de/search/author?author=Junaid%20Qadir" title="DBLP author search">Junaid Qadir</a>
+ 
+ </div>
+ 
+ </div><div class=extra-ref-cite>
+ 
+ <a id=bib-cite-css hidden href=https://static.arxiv.org/static/browse/0.3.4/css/cite.css class=sf-hidden>a</a>
+ <span id=bib-cite-trigger class="bib-cite-button abs-button">export bibtex citation</span>
+ <span id=bib-cite-loading hidden class=sf-hidden>Loading...</span>
+</div>
+<div id=bib-cite-modal class="bib-modal sf-hidden" hidden>
+ 
+</div>
+ <div class=bookmarks>
+ <div><h3>Bookmark</h3></div><a class="abs-button abs-button-grey abs-button-small" href="https://arxiv.org/ct?url=http%3A%2F%2Fwww.bibsonomy.org%2FBibtexHandler%3FrequTask%3Dupload%26url%3Dhttps%3A%2F%2Farxiv.org%2Fabs%2F2009.02560%26description%3DParticle+Swarm+Optimized+Federated+Learning+For+Industrial+IoT+and+Smart+City+Services&amp;v=e61ea43d" title="Bookmark on BibSonomy">
+ <img src=data:null;base64, alt="BibSonomy logo">
+ </a>
+ <a class="abs-button abs-button-grey abs-button-small" href="https://arxiv.org/ct?url=https%3A%2F%2Fwww.mendeley.com%2Fimport%2F%3Furl%3Dhttps%3A%2F%2Farxiv.org%2Fabs%2F2009.02560&amp;v=a43819c8" title="Bookmark on Mendeley">
+ <img src=data:null;base64, alt="Mendeley logo">
+ </a>
+ <a class="abs-button abs-button-grey abs-button-small" href="https://arxiv.org/ct?url=https%3A%2F%2Freddit.com%2Fsubmit%3Furl%3Dhttps%3A%2F%2Farxiv.org%2Fabs%2F2009.02560%26title%3DParticle+Swarm+Optimized+Federated+Learning+For+Industrial+IoT+and+Smart+City+Services&amp;v=35bc7a3d" title="Bookmark on Reddit">
+ <img src=data:null;base64, alt="Reddit logo">
+ </a>
+ <a class="abs-button abs-button-grey abs-button-small" href="https://arxiv.org/ct?url=http%3A%2F%2Fsciencewise.info%2Fbookmarks%2Fadd%3Furl%3Dhttps%3A%2F%2Farxiv.org%2Fabs%2F2009.02560&amp;v=76392f87" title="Bookmark on ScienceWISE">
+ <img src=data:null;base64, alt="ScienceWISE logo">
+ </a>
+</div>
+ </div>
+ 
+ 
+<div id=labstabs>
+ <div class=labstabs><input type=radio name=tabs id=tabone checked class=sf-hidden>
+ <label for=tabone>Bibliographic Tools</label>
+ <div class="tab labs-display-bib">
+ <h1>Bibliographic and Citation Tools</h1>
+ <div class=toggle>
+ 
+ <div class="columns is-mobile lab-row">
+ <div class="column lab-switch">
+ <label class=switch>
+ <input id=bibex-toggle type=checkbox class="lab-toggle sf-hidden">
+ <span class=slider></span>
+ <span class=is-sr-only>Bibliographic Explorer Toggle</span>
+ </label>
+ </div>
+ <div class="column lab-name">
+ <span id=label-for-bibex>Bibliographic Explorer</span> <em>(<a href=https://labs.arxiv.org/>What is the Explorer?</a>)</em>
+ </div>
+ </div>
+ <div class="columns is-mobile lab-row">
+ <div class="column lab-switch">
+ <label class=switch>
+ <input id=litmaps-toggle type=checkbox class="lab-toggle sf-hidden" data-script-url=https://static.arxiv.org/static/browse/0.3.4/js/litmaps.js?20210617 aria-labelledby=label-for-litmaps>
+ <span class=slider></span>
+ <span class=is-sr-only>Litmaps Toggle</span>
+ </label>
+ </div>
+ <div class="column lab-name">
+ <span id=label-for-litmaps>Litmaps</span> <em>(<a href=https://www.litmaps.co/ target=_blank>What is Litmaps?</a>)</em>
+ </div>
+ </div>
+ 
+ <div class="columns is-mobile lab-row">
+ <div class="column lab-switch">
+ <label class=switch>
+ <input id=scite-toggle type=checkbox class="lab-toggle sf-hidden" data-script-url=https://static.arxiv.org/static/browse/0.3.4/js/scite.js?20210617 aria-labelledby=label-for-scite>
+ <span class=slider></span>
+ <span class=is-sr-only>scite.ai Toggle</span>
+ </label>
+ </div>
+ <div class="column lab-name">
+ <span id=label-for-scite>scite Smart Citations</span> <em>(<a href=https://www.scite.ai/ target=_blank>What are Smart Citations?</a>)</em>
+ </div>
+ </div>
+ </div>
+ <div class="labs-content-placeholder labs-display" style=display:none></div>
+ <div style=min-height:15px id=litmaps-open-in></div>
+ <div style=min-height:15px id=scite-open-in></div>
+ </div>
+ <input type=radio name=tabs id=tabtwo class=sf-hidden>
+ <label for=tabtwo>Code &amp; Data</label>
+ <div class="tab sf-hidden">
+ 
+ 
+ 
+ 
+ </div>
+ 
+ <input type=radio name=tabs id=labstabs-demos-input class=sf-hidden>
+ <label for=labstabs-demos-input id=labstabs-demos-label style=display:block>Demos</label>
+ <div class="tab sf-hidden">
+ 
+ 
+ 
+ </div>
+ <input type=radio name=tabs id=tabfour class=sf-hidden>
+ <label for=tabfour>Related Papers</label>
+ <div class="tab sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ </div>
+ <input type=radio name=tabs id=tabfive class=sf-hidden>
+ <label for=tabfive>
+ About arXivLabs
+ </label>
+ <div class="tab sf-hidden">
+ 
+ </div>
+ </div>
+</div>
+ <div class=endorsers>
+ <a href=https://arxiv.org/auth/show-endorsers/2009.02560 class=endorser-who>Which authors of this paper are endorsers?</a> |
+ <a id=mathjax_toggle href=https://arxiv.org/abs/2009.02560>Disable MathJax</a> (<a href=https://arxiv.org/help/mathjax>What is MathJax?</a>)
+ <span class=help style=font-style:normal;float:right;margin-top:0;margin-right:1em></span>
+ </div>
+ 
+</div>
+ </div>
+ </main>
+ <footer style=clear:both>
+ <div class="columns is-desktop" role=navigation aria-label=Secondary style="margin:-0.75em -0.75em 0.75em -0.75em">
+ 
+ <div class=column style=padding:0>
+ <div class=columns>
+ <div class=column>
+ <ul style=list-style:none;line-height:2>
+ <li><a href=https://arxiv.org/about>About</a></li>
+ <li><a href=https://arxiv.org/help>Help</a></li>
+ </ul>
+ </div>
+ <div class=column>
+ <ul style=list-style:none;line-height:2>
+ <li>
+ <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512" class="icon filter-black" role=presentation><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+ <a href=https://arxiv.org/help/contact> Contact</a>
+ </li>
+ <li>
+ <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512" class="icon filter-black" role=presentation><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg>
+ <a href=https://arxiv.org/help/subscribe> Subscribe</a>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ 
+ <div class=column style=padding:0>
+ <div class=columns>
+ <div class=column>
+ <ul style=list-style:none;line-height:2>
+ <li><a href=https://arxiv.org/help/license>Copyright</a></li>
+ <li><a href=https://arxiv.org/help/policies/privacy_policy>Privacy Policy</a></li>
+ </ul>
+ </div>
+ <div class="column sorry-app-links">
+ <ul style=list-style:none;line-height:2>
+ <li><a href=https://arxiv.org/help/web_accessibility>Web Accessibility Assistance</a></li>
+ <li>
+ <p class=help>
+ <a class=a11y-main-link href=https://status.arxiv.org/ target=_blank>arXiv Operational Status <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 256 512" class="icon filter-dark_grey" role=presentation><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></a><br>
+ Get status notifications via
+ <a class=is-link href=https://subscribe.sorryapp.com/24846f03/email/new target=_blank><svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512" class="icon filter-black" role=presentation><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>email</a>
+ or <a class=is-link href=https://subscribe.sorryapp.com/24846f03/slack/new target=_blank><svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 448 512" class="icon filter-black" role=presentation><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>slack</a>
+ </p>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </div> 
+ 
+ </div>
+ </footer>
+ </div>
+ 
