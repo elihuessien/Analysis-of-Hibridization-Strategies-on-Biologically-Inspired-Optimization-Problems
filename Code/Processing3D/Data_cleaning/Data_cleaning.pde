@@ -11,17 +11,17 @@ Date:     02/03/2021
 */
 
 final String expName = "Experiment 4";
-final String section = "Size - 50";
-final String part = "";
-final String fileName = "GA";
+final String section = "";
+final String part = "Size - 50";
+final String fileName = "PSO_GA_Hybrid2";
 String data;
 
 void draw(){
   /*
-  for(int i=0; i<51; i+=10)
+  for(int i=50; i<101; i+=10)
   {
-    loadData(i+"%");
-    formatAndSave(i+"%");
+    loadData("("+i+")");
+    formatAndSave("("+i+")");
   }
   */
   

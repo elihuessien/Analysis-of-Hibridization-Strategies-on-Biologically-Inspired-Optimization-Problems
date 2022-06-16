@@ -3,31 +3,34 @@ library(pracma)
 library(dplyr)
 library(datasets)
 
-path1 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/GA.txt"
-path2 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/ACO.txt"
-path3 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO.txt"
-path4 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/ACO_GA_Hybrid.txt"
-path5 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO_ACO_Hybrid.txt"
-path6 <- "C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - 10/PSO_GA_Hybrid.txt"
-path7 <- "C:/Users/C14460702/Dissertation/Data/Results/Benchmark/Size - 10/GreedyOptimizer.txt"
+map_size = 50
+
+
+path1 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/GA.txt", sep = "")
+path2 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/ACO.txt", sep = "")
+path3 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/PSO.txt", sep = "")
+path4 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/ACO_GA_Hybrid.txt", sep = "")
+path5 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/PSO_ACO_Hybrid.txt", sep = "")
+path6 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Experiment 4/Size - ", map_size,"/PSO_GA_Hybrid.txt", sep = "")
+path7 <- paste("C:/Users/C14460702/Dissertation/Data/Results/Benchmark/Size - ", map_size,"/GreedyOptimizer.txt", sep = "")
+
 
 ga.data <- read.table(path1, header=FALSE, sep=",", dec=".")
 aco.data <- read.table(path2, header=FALSE, sep=",", dec=".")
 pso.data <- read.table(path3, header=FALSE, sep=",", dec=".")
-aco_ga.data <- read.table(path4, header=FALSE, sep=",", dec=".")
-aco_pso.data <- read.table(path5, header=FALSE, sep=",", dec=".")
-pso_ga.data <- read.table(path6, header=FALSE, sep=",", dec=".")
+aco.ga.data <- read.table(path4, header=FALSE, sep=",", dec=".")
+aco.pso.data <- read.table(path5, header=FALSE, sep=",", dec=".")
+pso.ga.data <- read.table(path6, header=FALSE, sep=",", dec=".")
 Benchmark <- read.table(path7, header=FALSE, sep=",", dec=".")
-
 
 
 # Analyzing Averages
 ga.avg <- colMeans(ga.data)
 aco.avg <- colMeans(aco.data)
 pso.avg <- colMeans(pso.data)
-aco_ga.avg <- colMeans(aco_ga.data)
-aco_pso.avg <- colMeans(aco_pso.data)
-pso_ga.avg <- colMeans(pso_ga.data)
+aco.ga.avg <- colMeans(aco_ga.data)
+aco.pso.avg <- colMeans(aco_pso.data)
+pso.ga.avg <- colMeans(pso_ga.data)
 
 ID <- c()
 Value <- c()
@@ -67,8 +70,8 @@ AVG.df <- data.frame(ID, Value, Class)
 
 ggplot(AVG.df, mapping = aes(x = ID, y = Value, colour = Class)) +
   geom_line(size = 1) +
-  labs(title = "Average GBest per Iteration",
-       x="Iteration", colour = "Algorithm")
+  labs(title = paste("Average GBest per Iteration (Maps with city count ", map_size, ")", sep = ""),
+       x="Iteration", y = "Score", colour = "Algorithm")
 
 
 
@@ -134,10 +137,9 @@ ggplot(filter(AUC.df, Class == "ACO/PSO Hybrid" | Class == "ACO - AS"), aes(x = 
 wilcox.test(Value ~ Class, data = filter(AUC.df, Class == "ACO/PSO Hybrid" | Class == "ACO - AS"))
 
 
-
 # Clean Up
 rm(path1, path2, path3, path4, path5, path6, path7)
 rm(aco.data, pso.data, ga.data, aco.ga.data, pso.ga.data, pso.aco.data)
 rm(aco.avg, pso.avg, ga.avg, aco.ga.avg, pso.ga.avg, pso.aco.avg, AVG.df)
 rm(aco.auc, pso.auc, ga.auc, aco.ga.auc, pso.ga.auc, pso.aco.auc, AUC.df)
-rm(size, IDs, Value, Class, i, Benchmark)
+rm(size, ID, Value, Class, i, Benchmark, map_size)

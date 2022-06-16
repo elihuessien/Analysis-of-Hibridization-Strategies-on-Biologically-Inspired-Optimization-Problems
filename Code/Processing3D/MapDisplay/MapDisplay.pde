@@ -11,15 +11,15 @@ Date:     17/02/2021
 
 
 ArrayList<Vector> map = new ArrayList<Vector>(); // list of vectors/cities
-static int MAPSIZE = 10;  // number of cities to expect
-static int MAPNUM = 6;   // maps id
+static int MAPSIZE = 50;  // number of cities to expect
+static int MAPNUM = 1;   // maps id
 
 int buffer = 50;         // for visual design purposes
 
 // example route to visualize. This variable will be 
 // collected from the result of the algorithms 
 // when requested for checking
-int[] route = {8, 0, 6, 2, 1, 4, 5, 7, 9, 3};
+int[] route = {};
 
 void setup(){
   size(600,600);          // 500x500 map + buffer of 100 on all sides
